@@ -1,0 +1,7 @@
+#Before you can do transformations using PySpark, you need to get the data into the Spark framework.
+
+import pyspark.sql
+
+spark = pyspark.sql.SparkSession.builder.getOrCreate()
+
+spark.read.jdbc("jdbc:postgresql://localhost:5432/pagila", "customer", {"user":"repl","password":"password"})
