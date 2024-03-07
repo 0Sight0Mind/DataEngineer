@@ -1,0 +1,8 @@
+# Write the pandas DataFrame to parquet
+film_pdf.to_parquet("films_pdf.parquet")
+
+# Write the PySpark DataFrame to parquet
+film_sdf.write.parquet("films_sdf.parquet")
+
+#Pandas .to_parquet() method - will be saved in the specified S3 bucket (Redshift)
+film_pdf.to_parquet("./s3//path/to/bucket/films_pdf.parquet") 
