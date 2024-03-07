@@ -5,4 +5,7 @@ film_pdf.to_parquet("films_pdf.parquet")
 film_sdf.write.parquet("films_sdf.parquet")
 
 #Pandas .to_parquet() method - will be saved in the specified S3 bucket (Redshift)
-film_pdf.to_parquet("./s3//path/to/bucket/films_pdf.parquet") 
+df.to_parquet("./s3://path/to/bucket/customer.parquet") 
+
+#Psyspark .write.parquet() method - will be saved in the specified S3 bucket (Redshift)
+df.write.parquet("./s3://path/to/bucket/customer.parquet") 
