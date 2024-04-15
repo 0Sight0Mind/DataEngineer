@@ -9,4 +9,4 @@ connection_uri = "postgresql+psycopg2://repl:password@localhost:5432/market"
 db_engine = sqlalchemy.create_engine(connection_uri)
 
 #Query the SQL database
-raw_stock_data = pd.read_sql("SELECT * FROM raw_stock_data LIMIT 10", db_engine)
+raw_stock_data = pd.read_sql("SELECT * FROM raw_stock_data LIMIT 10;", db_engine)
