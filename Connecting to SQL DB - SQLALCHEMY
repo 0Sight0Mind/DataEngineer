@@ -1,0 +1,12 @@
+#Data can be pulled from SQL databases into a pandas Dataframe
+#Requires a connection URI to build an engine, and connect to the database 
+
+import sqlalchemy
+import pandas as pd
+
+#Connection URI: schema_identifier://username:password@host:port/db
+connection_uri = "postgresql+psycopg2://repl:password@localhost:5432/market"
+db_engine = sqlalchemy.create_engine(connection_uri)
+
+#Query the SQL database
+raw_stock_data = pd.read_sql("SELECT * FROM raw_stock_data LIMIT 10", db_engine)
